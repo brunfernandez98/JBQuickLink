@@ -12,8 +12,12 @@
     "made_with": "Fait avec"
   },
   "Index": {
-    "meta_title": "Présentation de Next.js Boilerplate",
-    "meta_description": "Next js Boilerplate est le code de démarrage parfait pour votre projet. Construisez votre application React avec le framework Next.js."
+    "meta_title": "Next.js Boilerplate Presentation",
+    "meta_description": "Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework.",
+    "title_1": "Create attractive  ",
+    "title_2": "Links",
+    "title_3": "with just one click",
+    "subtitle": "Innovative link shortener for streamlined sharing."
   },
   "Guestbook": {
     "meta_title": "Livre d'or",

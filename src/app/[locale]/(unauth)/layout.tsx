@@ -1,14 +1,13 @@
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-
-import LocaleSwitcher from '@/components/LocaleSwitcher';
-import { BaseTemplate } from '@/templates/BaseTemplate';
-
 export default function Layout(props: { children: React.ReactNode }) {
-  const t = useTranslations('RootLayout');
-
   return (
-    <BaseTemplate
+    <div
+      className="inset-0 mb-4 flex size-full justify-center overflow-hidden pt-10  
+    "
+    >
+      {props.children}
+    </div>
+
+    /*  <BaseTemplate
       leftNav={
         <>
           <li>
@@ -80,6 +79,6 @@ export default function Layout(props: { children: React.ReactNode }) {
       }
     >
       <div className="py-5 text-xl [&_p]:my-6">{props.children}</div>
-    </BaseTemplate>
+    </BaseTemplate> */
   );
 }

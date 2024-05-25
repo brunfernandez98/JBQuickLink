@@ -1,10 +1,19 @@
 import '@/styles/global.css';
 
 import type { Metadata } from 'next';
+import { Lexend } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
+import HeaderAuth from '@/components/shared/HeaderAuth';
 import { AppConfig } from '@/utils/AppConfig';
+
+// font settings
+const legend = Lexend({
+  subsets: ['latin'],
+  variable: '--font-lexend',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+});
 
 export const metadata: Metadata = {
   icons: [
@@ -42,8 +51,10 @@ export default function RootLayout(props: {
   const messages = useMessages();
 
   return (
-    <html lang={props.params.locale}>
-      <body>
+    <html lang={props.params.locale} className={legend.className}>
+      <body className="overflow-x-hidden bg-black  bg-cover bg-center bg-no-repeat">
+        <HeaderAuth />
+        {/*  <Nav /> */}
         <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
