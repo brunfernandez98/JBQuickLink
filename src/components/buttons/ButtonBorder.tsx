@@ -23,22 +23,18 @@ const ButtonBorder = React.forwardRef<HTMLButtonElement, ButtonBorderProps>(
       text,
       ...rest
     },
-    ref,
+    ref
   ) => {
     const disabled = isLoading || buttonDisabled;
     return (
       <button
         className={cn(
-          'mt-2 focus:ring-offset-slate-50" inline-flex h-10 items-center justify-center rounded-full border border-slate-800 bg-gradient-to-r from-blue-500 to-indigo-500 px-6 text-sm font-medium text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 disabled:opacity-50',
+          'items-center text-gray-400 justify-center whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300 bg-gray-100 shadow-sm dark:text-gray-50 px-4 py-2 font-semibold tracking-tight flex relative rounded-lg overflow-hidden backdrop-blur-sm filter bg-white/5 hover:bg-white/10 border border-white/10 gap-2 text-base h-[42px]',
           className,
           {
             'cursor-not-allowed': disabled,
             'animate-shimmer': !disabled,
-            'hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600':
-              !disabled,
-            'active:bg-gradient-to-r active:from-blue-700 active:to-indigo-700':
-              !disabled,
-          },
+          }
         )}
         disabled={disabled}
         ref={ref}
@@ -54,7 +50,7 @@ const ButtonBorder = React.forwardRef<HTMLButtonElement, ButtonBorderProps>(
               'disabled:cursor-not-allowed',
               isLoading &&
                 'relative text-transparent transition-none hover:text-transparent disabled:cursor-wait',
-              className,
+              className
             )}
           >
             <ImSpinner2 className="animate-spin" />
@@ -65,7 +61,7 @@ const ButtonBorder = React.forwardRef<HTMLButtonElement, ButtonBorderProps>(
         {Icon && <Icon className={cn(iconClassName)} />}
       </button>
     );
-  },
+  }
 );
 
 ButtonBorder.displayName = 'ButtonBorder';

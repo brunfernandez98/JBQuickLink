@@ -1,7 +1,11 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
 import SectionOne from '@/components/landing/SectionOne';
 import SectionTwo from '@/components/landing/SectionTwo';
+import Section from '@/components/Section/Section';
+
+import profilePic from '../../../../public/background.png';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -17,13 +21,27 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 export default function Index() {
   return (
-    <div className="mb-4 flex size-full justify-center pt-10 ">
-      <div
-        className="container relative mx-auto mb-4 mt-24 flex h-full flex-col items-center justify-center 
-      text-center sm:mt-24 lg:mt-0 xl:mt-0 "
-      >
-        <SectionOne />
-        <SectionTwo />
+    <div className="mb-2 flex size-full justify-center">
+      <Image
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 select-none opacity-60 mix-blend-lighten"
+        alt="Picture of the author"
+        src={profilePic}
+        layout="fill"
+        objectFit="cover"
+        priority
+        quality={100}
+      />
+      <div className="z-20 mx-auto mb-4">
+        <Section
+          id="home"
+          first
+          classes="relative z-40 mx-auto flex max-w-7xl flex-col overflow-hidden px-4 sm:items-center sm:justify-center lg:px-8"
+        >
+          <SectionOne />
+        </Section>
+        <Section>
+          <SectionTwo />
+        </Section>
       </div>
     </div>
   );

@@ -1,7 +1,23 @@
-import type { UserConfig } from '@commitlint/types';
-
-const Configuration: UserConfig = {
+// commitlint.config.js
+module.exports = {
   extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      [
+        'feat',
+        'fix',
+        'docs',
+        'style',
+        'refactor',
+        'perf',
+        'test',
+        'chore',
+        'revert',
+      ],
+    ],
+    'subject-case': [2, 'always', 'sentence-case'],
+    // Añade más reglas personalizadas aquí
+  },
 };
-
-export default Configuration;

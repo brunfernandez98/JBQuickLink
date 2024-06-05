@@ -1,9 +1,6 @@
 export default function Layout(props: { children: React.ReactNode }) {
   return (
-    <div
-      className="inset-0 mb-4 flex size-full justify-center overflow-hidden pt-10  
-    "
-    >
+    <div className="mx-auto px-3 lg:max-w-screen-2xl lg:px-8">
       {props.children}
     </div>
 

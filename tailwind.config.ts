@@ -8,23 +8,10 @@ export default {
         DEFAULT: '15px',
       },
     },
-
     fontFamily: {
       primary: 'Orbitron',
       secondary: 'Rajdhani',
       tertiary: 'Aldrich',
-    },
-    fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
     },
     extend: {
       backgroundImage: {
@@ -32,9 +19,11 @@ export default {
           'radial-gradient(75% 100% at 50% 0%, rgba(56, 189, 248, 0.6) 0%, rgba(56, 189, 248, 0) 75%)',
         'nav-gradient':
           'linear-gradient(270deg, hsl(295, 76%, 51%) 0%, hsl(284, 70%, 73%) 26%, hsl(257, 70%, 86%) 39%, hsl(202, 92%, 90%) 50%, hsl(215, 77%, 81%) 61%, hsl(221, 73%, 70%) 74%, hsl(220, 76%, 51%) 100%)',
+        'custom-gradient':
+          'linear-gradient(130deg, rgb(36, 198, 220), rgb(84, 51, 255) 41.07%, rgb(0 255 151) 76.05%)',
       },
-      filter: {
-        'blur-nav': 'blur(125px)',
+      borderRadius: {
+        custom: '.25rem',
       },
       fontSize: {
         base: '1rem',
@@ -81,6 +70,19 @@ export default {
           800: '#2d3748',
           900: '#1a202c',
         },
+        rusty: {
+          950: '#141313',
+          900: '#1B1A19',
+          800: '#2A2827',
+          700: '#464343',
+          600: '#5B5856',
+          500: '#7A7775',
+          400: '#AAA7A5',
+          300: '#D8D6D4',
+          200: '#E7E6E4',
+          100: '#F5F5F4',
+          50: '#FAFAFA',
+        },
         blue: {
           100: '#ebf8ff',
           200: '#bee3f8',
@@ -92,6 +94,20 @@ export default {
           800: '#2c5282',
           900: '#2a4365',
         },
+      },
+      blur: {
+        '72px': '72px',
+      },
+      opacity: {
+        '91': '0.91',
+        '99': '0.99',
+      },
+      width: {
+        '85p': '85%',
+      },
+      height: {
+        '400px': '400px',
+        '600px': '600px',
       },
       animation: {
         'spin-slow': 'spin 6s linear infinite',
