@@ -1,7 +1,12 @@
 import type { Config } from 'tailwindcss';
 
+const { nextui } = require('@nextui-org/react');
+
 export default {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     container: {
       padding: {
@@ -19,11 +24,14 @@ export default {
           'radial-gradient(75% 100% at 50% 0%, rgba(56, 189, 248, 0.6) 0%, rgba(56, 189, 248, 0) 75%)',
         'nav-gradient':
           'linear-gradient(270deg, hsl(295, 76%, 51%) 0%, hsl(284, 70%, 73%) 26%, hsl(257, 70%, 86%) 39%, hsl(202, 92%, 90%) 50%, hsl(215, 77%, 81%) 61%, hsl(221, 73%, 70%) 74%, hsl(220, 76%, 51%) 100%)',
-        'custom-gradient':
-          'linear-gradient(130deg, rgb(36, 198, 220), rgb(84, 51, 255) 41.07%, rgb(0 255 151) 76.05%)',
+        'blue-gradient': 'linear-gradient(to right, #5EA2EF, #0072F5)',
       },
       borderRadius: {
         custom: '.25rem',
+        'all-14': '14px',
+      },
+      borderWidth: {
+        '1': '1px',
       },
       fontSize: {
         base: '1rem',
@@ -129,11 +137,5 @@ export default {
       },
     },
   },
-
-  container: {
-    padding: {
-      DEFAULT: '15px',
-    },
-  },
-  plugins: [],
+  plugins: [nextui()],
 } satisfies Config;

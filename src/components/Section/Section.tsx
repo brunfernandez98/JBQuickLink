@@ -23,14 +23,17 @@ const Section = ({
   maxScreenWidth = 'xl',
 }: SectionProps) => {
   return (
-    <section
-      id={id}
-      className={`px-4 sm:px-8 md:py-12 lg:py-32 ${
-        first ? 'pt-6 sm:pt-8 md:pt-10 lg:pt-14' : ''
-      } ${classes}`}
-    >
-      <div className={`mx-auto ${maxScreenWidthVariants[maxScreenWidth]}`}>
-        {children}
+    <section className="h-auto w-full" id={id}>
+      <div
+        className={`relative px-4  ${
+          first ? 'pt-6 sm:pt-8 md:pt-10 lg:pt-14' : ''
+        } ${classes}`}
+      >
+        <div
+          className={`relative z-10 mx-auto ${maxScreenWidthVariants[maxScreenWidth]}`}
+        >
+          {children}
+        </div>
       </div>
     </section>
   );

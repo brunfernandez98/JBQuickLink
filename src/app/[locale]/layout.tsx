@@ -1,11 +1,13 @@
 import '@/styles/global.css';
 
+import { NextUIProvider } from '@nextui-org/system';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 import HeaderAuth from '@/components/Shared/HeaderAuth';
+import { cn } from '@/libs/cn';
 import { AppConfig } from '@/utils/AppConfig';
 
 // font settings
@@ -51,16 +53,31 @@ export default function RootLayout(props: {
   const messages = useMessages();
 
   return (
-    <html lang={props.params.locale} className={legend.className}>
-      <body className="overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat">
-        <HeaderAuth />
-        {/*  <Nav /> */}
-        <NextIntlClientProvider
-          locale={props.params.locale}
-          messages={messages}
+    <html lang={props.params.locale} className={cn('dark', legend.className)}>
+      <body className="size-full bg-black bg-cover bg-center bg-no-repeat">
+        <NextUIProvider>
+          <HeaderAuth />
+          {/*  <Nav /> */}
+          <NextIntlClientProvider
+            locale={props.params.locale}
+            messages={messages}
+          >
+            {props.children}
+          </NextIntlClientProvider>
+        </NextUIProvider>
+        {/*  <div
+          aria-hidden="true"
+          className="fixed right-[-60%] top-[-80%] z-0 rotate-12 border-red-50 2xl:right-[-45%] 2xl:top-[-60%] dark:opacity-70"
         >
-          {props.children}
-        </NextIntlClientProvider>
+          <Image
+            src="/background-2.png"
+            alt="docs right background"
+            fill
+            className="transition-transform-opacity rounded-large relative z-10 opacity-0 shadow-none shadow-black/5 duration-300 data-[loaded=true]:opacity-100 motion-reduce:transition-none"
+            data-loaded="true"
+          />
+        </div> */}
+        <div />
       </body>
     </html>
   );

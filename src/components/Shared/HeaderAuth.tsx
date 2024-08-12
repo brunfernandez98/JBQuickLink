@@ -38,7 +38,7 @@ const HeaderAuth = () => {
         animate="visible"
         exit="hidden"
         variants={headerAuthVariants}
-        className={` ${isScrolled && 'border-rusty-50/10 backdrop-blur-sm '} inset-x-0 top-0 z-50 mx-auto flex min-h-12 flex-wrap items-center justify-between gap-4 px-4 py-2 shadow-md shadow-primary/5 sm:sticky  sm:w-[95%] sm:max-w-7xl sm:rounded-lg sm:px-4 lg:px-8`}
+        className={` ${isScrolled && 'border-rusty-50/10 backdrop-blur-sm '} inset-x-0  top-0 z-50 mx-auto flex min-h-12 flex-wrap items-center justify-between gap-4 px-4 py-2 shadow-md shadow-primary/5 sm:sticky sm:w-[95%]  sm:max-w-7xl sm:basis-3/5 sm:rounded-lg sm:px-4 lg:px-8`}
       >
         {/* This is mobile screen */}
         <motion.div

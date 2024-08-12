@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import type { ReactElement, ReactNode } from 'react';
+
+import { cn } from '@/libs/cn';
 
 type HeadingProps = {
   children: ReactNode | ReactNode[] | string;
@@ -24,7 +25,7 @@ const Heading = ({
   const Tag = variant;
   const variantClasses = variants[variant];
 
-  const mergedClasses = clsx(`font-black  ${variantClasses} ${classes ?? ''}`);
+  const mergedClasses = cn(`font-black  ${variantClasses} ${classes ?? ''}`);
 
   return <Tag className={mergedClasses}>{children}</Tag>;
 };

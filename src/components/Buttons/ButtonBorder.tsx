@@ -29,7 +29,10 @@ const ButtonBorder = React.forwardRef<HTMLButtonElement, ButtonBorderProps>(
     return (
       <button
         className={cn(
-          'group items-center text-lg w-fit duration-300 ease-in-out transform hover:scale-105 rounded-full aurora-button text-rusty-200 hover:bg-black bg-transparent transition-colors  justify-center whitespace-nowrap fo disabled:pointer-events-none disabled:opacity-50 shadow-md px-4 py-2 font-semibold tracking-tight flex relative overflow-hidden border border-white/10 gap-2 h-[42px]',
+          'group items-center duration-300 ease-in-out transform hover:scale-105 rounded-full aurora-button text-rusty-200 hover:bg-black bg-transparent transition-colors justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 shadow-md flex relative overflow-hidden border border-white/10 gap-2 h-[42px]',
+          'px-2 py-2 text-sm',
+          'md:px-6 md:py-3 md:text-base',
+          'lg:px-6 lg:py-4 lg:text-lg',
           className,
           {
             'cursor-not-allowed': disabled,

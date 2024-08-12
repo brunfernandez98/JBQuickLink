@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/extensions */
+/* import/extensions */
 import { withSentryConfig } from '@sentry/nextjs';
 import './src/libs/Env.mjs';
 import withBundleAnalyzer from '@next/bundle-analyzer';
@@ -23,6 +23,9 @@ export default withSentryConfig(
         // Related to Pino error with RSC: https://github.com/orgs/vercel/discussions/3150
         serverComponentsExternalPackages: ['pino'],
       },
+      images: {
+        domains: ['images.unsplash.com'], // Agrega este bloque para permitir imágenes de Unsplash
+      },
       webpack: (config) => {
         // config.externals is needed to resolve the following errors:
         // Module not found: Can't resolve 'bufferutil'
@@ -34,7 +37,7 @@ export default withSentryConfig(
 
         return config;
       },
-    }),
+    })
   ),
   {
     // For all available options, see:
@@ -70,5 +73,5 @@ export default withSentryConfig(
     // https://docs.sentry.io/product/crons/
     // https://vercel.com/docs/cron-jobs
     automaticVercelMonitors: true,
-  },
+  }
 );

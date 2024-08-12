@@ -24,7 +24,6 @@ const SectionOne = () => {
           },
         },
       }}
-      className=""
     >
       <div className="mx-auto max-w-screen-xl">
         <motion.div
@@ -54,7 +53,7 @@ const SectionOne = () => {
           {/* subtitle */}
           <motion.p
             variants={animationVariants.fadeDown}
-            className="mt-8 max-w-md text-xl text-rusty-400 sm:mx-auto sm:max-w-[38rem] sm:text-center lg:max-w-[45rem] lg:text-2xl"
+            className="text-n-2 mx-auto mb-6 mt-8 max-w-3xl sm:mx-auto sm:max-w-[38rem] sm:text-center lg:mb-8 lg:max-w-[45rem] lg:text-2xl"
           >
             {t('subtitle')}
           </motion.p>
@@ -70,7 +69,6 @@ const SectionOne = () => {
           </motion.div>
         </motion.div>
       </div>
-      <p className="">Hola</p>
     </motion.div>
   );
 };
