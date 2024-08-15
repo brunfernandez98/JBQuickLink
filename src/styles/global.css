@@ -50,16 +50,39 @@
   }
   .input,
   .textarea {
-    @apply border border-white/20 bg-transparent outline-none placeholder:font-light placeholder:text-white/30 focus:ring-1 focus:ring-accent;
+    @apply border border-white/20 bg-transparent outline-none  placeholder:text-white/30 focus:ring-1 ;
   }
   .textarea {
     @apply h-[180px] w-full resize-none rounded-lg p-6 capitalize;
   }
+/* Animations specific to xs and sm screens */
+@media (min-width: 320px) {
+    .animate-pricing {
+        @apply !bg-fuchsia-500 transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-blue-500;
+    }
+}
+
+/* Animations specific to md screens and larger */
+@media (min-width: 768px) {
+    .animate-pricing {
+        @apply transition-transform duration-500 ease-in-out hover:-translate-y-3 hover:shadow-2xl;
+        /* Reset scale to default (1) to remove the scaling effect */
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+    }
+}
+
+}
+
+
+
+
+
   .text-n-2 {
     --tw-text-opacity: 1;
     color: rgb(202 198 221 / var(--tw-text-opacity));
   }
-}
+
 
 @layer components {
   @keyframes aurora {

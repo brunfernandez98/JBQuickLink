@@ -34,7 +34,7 @@ const SectionTwo = () => {
   const gap = useTransform(
     scrollYProgress,
     [0, 0.2, 0.5, 1],
-    isMobile ? ['0px', '22px', '24px', '32px'] : ['0px', '2px', '8px', '32px']
+    isMobile ? ['0px', '22px', '32px', '42px'] : ['0px', '2px', '12px', '32px']
   );
 
   return (

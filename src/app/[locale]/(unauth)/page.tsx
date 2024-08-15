@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 
+import SectionFour from '@/components/Landing/SectionFour';
 import SectionOne from '@/components/Landing/SectionOne';
 import SectionThree from '@/components/Landing/SectionThree';
 import SectionTwo from '@/components/Landing/SectionTwo';
@@ -28,6 +29,12 @@ export default function Index() {
       </Section>
       <Section id="testimonials" classes="sm:px-6 md:py-6 lg:px-8 lg:py-12">
         <SectionThree />
+      </Section>
+      <Section
+        id="pricing"
+        classes="mt-8 sm:mt-10 sm:px-6 md:py-6 lg:px-8 lg:py-12"
+      >
+        <SectionFour />
       </Section>
     </div>
   );

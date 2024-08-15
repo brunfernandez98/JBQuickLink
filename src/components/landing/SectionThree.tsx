@@ -16,7 +16,7 @@ const SectionThree = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ amount: 0.2 }}
       transition={{ type: 'spring', stiffness: 80, damping: 20 }}
-      className="relative isolate overflow-hidden bg-gradient-to-br from-slate-900 to-slate-500 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-slate-900 to-slate-500 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 xl:px-24 lg:pt-0"
     >
       <div className="mx-auto max-w-md py-10 lg:mx-0 lg:flex-auto lg:py-10 lg:text-left">
         <HeadingText
@@ -33,20 +33,22 @@ const SectionThree = () => {
           </span>
         </p>
         <div className="mt-10">
-          <div className="mb-10 flex flex-col items-center justify-center sm:flex-row lg:justify-start">
-            <div className="mb-4 flex flex-row items-center sm:mb-0">
+          <div className="mb-10 lg:w-[90%] gap-4 flex flex-wrap flex-col items-center justify-center sm:flex-row lg:justify-start">
+            <div className="mb-4 flex items-center sm:mb-0">
               <AnimatedTooltipPreview />
             </div>
 
             {/* Stars */}
-            <StarRating
-              totalStars={5}
-              className="mx-1 size-4 text-yellow-400"
-            />
+            <div className="flex items-center">
+              <StarRating
+                totalStars={5}
+                className="mx-1 size-4 text-yellow-400"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="hidden w-full items-center justify-center text-blue-800 lg:flex">
+      <div className="hidden ml-2 w-full items-center justify-center text-blue-800 lg:flex">
         <CardStack items={CARDS} offset={20} scaleFactor={0.04} />
       </div>
     </motion.div>

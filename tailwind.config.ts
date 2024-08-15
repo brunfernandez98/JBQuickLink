@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss';
 const { nextui } = require('@nextui-org/react');
 
 export default {
+  darkMode: 'selector',
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
@@ -66,7 +67,6 @@ export default {
       colors: {
         primary: '#A0A0FF',
         secondary: '#34455B',
-        accent: '#453230',
         gray: {
           100: '#f7fafc',
           200: '#edf2f7',
@@ -118,6 +118,7 @@ export default {
         '600px': '600px',
       },
       animation: {
+        blob: 'blob 8s infinite',
         'spin-slow': 'spin 6s linear infinite',
         shimmer: 'shimmer 2s linear infinite',
       },
@@ -130,6 +131,31 @@ export default {
             backgroundPosition: '-200% 0',
           },
         },
+        blob: {
+          '0%': {
+            borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
+          },
+          '25%': {
+            borderRadius: '50% 50% 40% 60% / 50% 60% 40% 50%',
+          },
+          '50%': {
+            borderRadius: '70% 30% 60% 40% / 60% 50% 30% 50%',
+          },
+          '75%': {
+            borderRadius: '60% 40% 50% 50% / 40% 60% 50% 60%',
+          },
+          '100%': {
+            borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
+          },
+        },
+      },
+      animationDelay: {
+        0: '0ms',
+        1000: '1000ms',
+        2000: '2000ms',
+        3000: '3000ms',
+        4000: '4000ms',
+        5000: '5000ms',
       },
       fontFamily: {
         poppins: [`var(--font-poppins)`, 'sans-serif'],
@@ -137,5 +163,20 @@ export default {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    ({ addUtilities, theme }: { addUtilities: any; theme: any }) => {
+      const delays = theme('animationDelay') as Record<string, string>;
+
+      const newUtilities: Record<string, { animationDelay: string }> = {};
+
+      Object.keys(delays).forEach((key) => {
+        newUtilities[`.animation-delay-${key}`] = {
+          animationDelay: delays[key] ?? '',
+        };
+      });
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 } satisfies Config;

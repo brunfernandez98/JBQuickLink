@@ -46,12 +46,12 @@ export const CardStack = ({
   }, []);
 
   return (
-    <div className="relative size-80 md:h-80 md:w-[28rem]">
+    <div className="max-w-full relative size-80 lg:h-80 lg:w-[28rem]">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute flex h-80 w-[28rem] flex-col justify-between gap-6 rounded-3xl border border-neutral-200 bg-white p-8 shadow-xl shadow-black/[0.1] dark:border-white/[0.1] dark:bg-black dark:shadow-white/[0.05]"
+            className="absolute flex size-full flex-col justify-between gap-6 rounded-3xl border border-neutral-200 bg-white p-8 shadow-xl shadow-black/[0.1]"
             style={{
               transformOrigin: 'top center',
             }}
@@ -67,18 +67,13 @@ export const CardStack = ({
               isBordered
               size="lg"
               radius="full"
+              className='mb-4'
             />
-            <div className="font-normal text-neutral-700 dark:text-black">
-              {card.content}
-            </div>
+            <div className="font-normal text-neutral-900">{card.content}</div>
             <div>
-              <p className="font-medium text-neutral-500 dark:text-black">
-                {card.name}
-              </p>
-              <p className="font-normal text-neutral-400 dark:text-black">
-                {card.designation}
-              </p>
-            </div>
+              <p className="font-medium text-neutral-500">{card.name}</p>
+              <p className="font-normal text-neutral-400">{card.designation}</p>
+              </div>
           </motion.div>
         );
       })}
